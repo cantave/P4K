@@ -1,6 +1,6 @@
 # Play 4 Keeps Apparel - Frontend Project
 
-Welcome to the Play 4 Keeps Apparel project! This collaborative effort between **[Your Name]** and **[Friend's Name]** aims to develop a responsive frontend webpage that integrates seamlessly with a Shopify store. Our primary goal is to enhance our skills in frontend development and API consumption, utilizing this project as a practical learning experience.
+Welcome to the Play 4 Keeps Apparel project! This collaborative effort between my friend and I aims to develop a responsive frontend webpage that integrates seamlessly with a Shopify store. Our primary goal is to enhance our skills in frontend development and API consumption, utilizing this project as a practical learning experience.
 
 ## Project Overview
 
@@ -48,7 +48,7 @@ const initProductSlider = (containerSelector, leftArrowSelector, rightArrowSelec
 
 initProductSlider('.product-container-tops .products', '.left-arrow-tops', '.right-arrow-tops');
 initProductSlider('.product-container-bottoms .products', '.left-arrow-bottoms', '.right-arrow-bottoms');
-
+````
 ## Next Steps
 
 Moving forward, we plan to:
