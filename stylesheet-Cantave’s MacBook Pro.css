@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons .icon {
+    margin-left: 15px;
+}
+
+.vid-pic-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.vid-slider,
+.pic-slider {
+    width: 48%;
+    display: flex;
+    overflow: hidden;
+}
+
+.product-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product-header h2 {
+    text-decoration: underline;
+}
+
+.product-container-tops,
+.product-container-bottoms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.products {
+    display: flex;
+    transition: transform 0.3s ease;
+
+}
+
+.product {
+    flex: 0 0 auto;
+    min-width: 150px;
+    max-width: 30%;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.left-arrow-tops, 
+.left-arrow-bottoms {
+    left: 10px;
+}
+
+.right-arrow-tops,
+.right-arrow-bottoms {
+    right: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-logo {
+    margin-left: 20px;
+}
