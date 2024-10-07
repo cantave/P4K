@@ -61,7 +61,7 @@ Moving forward, we plan to:
 
 To view the project:
 
-1. Open the `index.html` file in your browser to see the current implementation.
+1. Open the `p4k.html` file in your browser to see the current implementation.
 
 ## Note
 
