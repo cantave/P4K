@@ -86,13 +86,70 @@ img {
     padding: 20px;
 }
 
+.vid-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.vid-slider video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .vid-slider,
 .pic-slider {
     width: 48%;
     display: flex;
     overflow: hidden;
     border: 1px solid #ddd;
+    position: relative;
+    justify-content: center;
 }
+
+.slides{
+    display: flex;
+    transition: transform 0.5s ease;   
+}
+
+.slides img{
+    width: 50%;
+    flex-shrink: 0;
+}
+
+.pic-slider button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pic-slider .buttons {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.prev {
+    margin-left: 10px;
+}
+
+.next {
+    margin-right: 10px;
+}
+
+.pic-slider:hover button {
+    opacity: 1;
+}
+
 .product-container-tops,
 .product-container-bottoms {
     display: flex;
