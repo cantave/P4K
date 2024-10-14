@@ -1,3 +1,8 @@
+require('dotenv').config();
+const apiKey = process.env.apiKey;
+const apiPassword = process.env.apiPassword;
+
+
 const initProductSlider = (containerSelector, leftArrowSelector, rightArrowSelector) => {
     const productsContainer = document.querySelector(containerSelector);
     const leftArrow = document.querySelector(leftArrowSelector);
