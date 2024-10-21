@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  @font-face {
+    font-family: "Ole English";
+    src: url("{{ "Chomsky.otf" | asset_url}}") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 30px;
+    padding: 0;
+  }
+  
+  img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  .logo {
+    width: auto;
+    flex: 0.25;
+    display: flex;
+  }
+  
+  .logo img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .header-txt {
+    flex: 0.6;
+    justify-content: center;
+    display: flex;
+  }
+  
+  #pg-title {
+    font-family: "Ole English", Arial;
+  }
+  
+  .header-icons {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    justify-content: space-evenly;
+    flex: 0.25;
+  }
+  
+  .header-icons a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    padding-right: 20px;
+  }
+  
+  .header-icons a:hover {
+    color: red;
+    text-decoration: none;
+  }
+  
+  .header-icons img {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    padding-right: 10px;
+  }
+  
+  .item-name,
+  .price {
+    font-family: Assistant, sans-serif;
+    font-weight: 400;
+    text-align: left;
+    text-decoration: none;
+  }
+  
+  .item-name {
+    font-size: 13px;
+  }
+  
+  .item-name:hover {
+    text-decoration: underline;
+  }
+  
+  .price {
+    font-size: 16px;
+  }
+  .vid-pic-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .vid-slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .vid-slider video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .vid-slider,
+  .pic-slider {
+    width: 48%;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .pic-slider .variant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .pic-slider .variant p {
+    text-decoration: none;
+    margin: 5px 0 0;
+  }
+  .pic-slider .slides .variant {
+    display: none;
+  }
+  
+  .pic-slider .slides .variant.active {
+    display: block;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slides img {
+    width: 50%;
+    flex-shrink: 0;
+  }
+  
+  .pic-slider button {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .pic-slider .buttons {
+    position: absolute;
+    top: 50%;
+    width: calc(100% - 20px);
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 5%;
+  }
+  
+  .next {
+    right: 5%;
+  }
+  
+  .pic-slider:hover button {
+    opacity: 1;
+  }
+  
+  .product-container-tops,
+  .product-container-bottoms {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 30px 20px 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .products {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    max-width: 50%;
+    margin: 0 10px;
+    padding: 0px;
+    border: 1px solid #ddd;
+    text-align: center;
+    transition: transform 0.3 ease;
+  }
+  
+  .product:hover {
+    transform: scale(1.05);
+  }
+  
+  .product p {
+    text-decoration: none;
+    margin: 5px 0 0;
+  }
+  
+  .product-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+  
+  .product-header h2 {
+    text-decoration: underline;
+    margin-bottom: 0;
+  }
+  
+  .arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  .left-arrow-tops,
+  .left-arrow-bottoms {
+    left: 10px;
+  }
+  
+  .right-arrow-tops,
+  .right-arrow-bottoms {
+    right: 10px;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: black;
+    color: white;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    padding-bottom: 20px;
+  }
+  
+  .footer-company,
+  .socials {
+    flex: 1;
+  }
+  
+  .footer-company {
+    display: flex;
+    flex-direction: column;
+    flex: 0.25;
+  }
+  
+  .footer-company a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-company h3 {
+    color: white;
+  }
+  
+  .footer .socials {
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+    justify-content: center;
+  }
+  
+  .footer .socials img {
+    width: 10%;
+    height: auto;
+    padding: 0px 10px 10px 0;
+    filter: invert(1);
+  }
+  
+  .footer .socials h3 {
+    align-items: center;
+    color: white;
+  }
+  
+  .socials-group {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+  
+  .payments-logo-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    align-items: flex-end;
+  }
+  
+  .pay-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    align-items: flex-end;
+    height: 100%;
+  }
+  
+  .pay-icons img {
+    width: 40px;
+    height: auto;
+  }
+  
+  .footer-logo {
+    flex: 0 0 25%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-logo img {
+    height: auto;
+    width: 40px;
+  }
+  
