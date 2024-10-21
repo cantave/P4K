@@ -12,23 +12,19 @@ This project focuses on building a user-friendly webpage that showcases apparel 
 
 ## Current Progress
 
-We've made significant strides in the development of the webpage. Below is an overview of our current implementation.
-
 ### HTML Structure
-
-Our HTML structure includes:
-
-- A **header** with a logo and navigation links.
-- A **video and image slider** to display engaging content.
-- A section to showcase **tops and bottoms** with navigational arrows for product viewing.
-- A **footer** with links to additional information and social media.
+- Developed the main layout with a header, product sliders, and a footer.
+- Implemented sections for videos and product images, ensuring a clear structure for content organization.
 
 ### CSS Styling
+- Applied custom styles for the header, sliders, and footer.
+- Ensured responsive design principles are implemented to adapt to different screen sizes.
+- Integrated a custom font using `@font-face`, currently under testing to ensure correct loading.
 
-Our CSS includes responsive styles for:
-
-- Layout adjustments using flexbox for alignment and spacing.
-- Custom styling for buttons, product containers, and footer sections.
+### Liquid Functionality
+- Utilized Liquid to dynamically load products from collections.
+- Integrated image URLs and video sources using Shopify's templating language.
+- Ensured proper asset loading through Liquid filters.
 
 ### JavaScript Functionality
 
@@ -50,24 +46,26 @@ initProductSlider('.product-container-tops .products', '.left-arrow-tops', '.rig
 initProductSlider('.product-container-bottoms .products', '.left-arrow-bottoms', '.right-arrow-bottoms');
 ````
 ## Next Steps
-
-Moving forward, we plan to:
-
-1. **Integrate the Shopify API**: Fetch real-time product data and dynamically display it on the webpage.
-2. **Enhance Responsiveness**: Fine-tune styles and interactions for optimal mobile experience.
-3. **User Authentication**: Implement user login/signup features to enhance user engagement.
+- **Font Integration**: Finalize and test the custom font integration to ensure it displays correctly across all devices.
+- **Additional Features**: Consider adding animations to transitions within sliders to enhance user experience.
+- **Testing**: Conduct thorough testing across different devices and browsers to identify any layout or functionality issues.
+- **Documentation**: Create detailed documentation for future contributors and users.
+- **Deployment**: Publish the theme as the homepage for the Shopify Storefront.
 
 ## Getting Started
 
 To view the project:
 
-1. Open the `p4k.html` file in your browser to see the current implementation.
+1.Click on the image below to be redirected to a youtube video demonstrating the progress that has been made to date.
+
+<div align="center">
+
+[![Demo Video](https://img.youtube.com/vi/jj6SBzvcUE4/0.jpg)](https://www.youtube.com/watch?v=jj6SBzvcUE4)
+
+</div>
+
 
 ## Note
 
 This project is a closed collaboration between the authors, and we are not seeking contributions from outside parties. Please do not clone or fork this repository.
-
-## License
-
-This project is licensed under the MIT License.
 
