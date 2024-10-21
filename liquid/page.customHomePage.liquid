@@ -34,13 +34,11 @@
 
     <div class="vid-pic-container">
       <div class="vid-slider">
-        {% assign video_count = 3 %}
-        {% for i in (1..video_count %}
-          <video id="myVideo{{ i }}" muted autoplay>
-            <source src="{{ 'your-video-source-' | append: i | append: .mp4 | asset_url }}" type="video/mp4">
+        {% assign video_files = "blk_guy_mean_mug.mp4,blk_woman_dancing.mp4,blk_male_boxer.mp4,blk_woman_lipstick.mp4,sexy_girl_twerk.mp4" | split: "," %}
+          <video id="myVideo" muted autoplay controls>
+            <source src="{{ video_files[0] | file_url }}" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
-        {% endfor %}
       </div>
       <div class="pic-slider">
         <button class="prev">&#9664;</button>
@@ -166,7 +164,7 @@
           <img src="{{ '007-visa-1.png' | asset_url }}" width="128px" height="128px" alt="visa">
         </div>
         <div class="footer-logo">
-          <img src="{{ 'p4k no background.png' | asset_url }}" width="200px" height="200px" alt="P4K logo">
+          <img src="{{ 'p4k white no background.png' | asset_url }}" width="200px" height="200px" alt="P4K logo">
         </div>
       </div>
     </footer>
@@ -260,11 +258,11 @@ const initVideoPlaylist = () => {
     console.log('Initializing video playlist...');
     const videoElement = document.getElementById('myVideo');
     const videos = [
-        '/vids/blk_guy_mean_mug.mp4',
-        '/vids/blk_woman_dancing.mp4',
-        '/vids/blk_male_boxer.mp4',
-        '/vids/blk_woman_lipstick.mp4',
-        '/vids/sexy_girl_twerk.mp4'
+        '{{ 'blk_guy_mean_mug.mp4' | file_url }}',
+        '{{ 'blk_woman_dancing.mp4' | file_url }}',
+        '{{ 'blk_male_boxer.mp4' | file_url}}',
+        '{{ 'blk_woman_lipstick.mp4' | file_url}}',
+        '{{ 'sexy_girl_twerk.mp4' | file_url }}'
     ];
 
     let currentVideoIndex = 0;
