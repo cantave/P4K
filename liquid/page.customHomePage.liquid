@@ -1,0 +1,299 @@
+{% comment %}
+  Custom Template for Play4Keeps Apparel
+{% endcomment %}
+
+{% layout none %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ 'customMC.css' | asset_url }}">
+    <title>Play4Keeps Apparel</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="{{ 'p4k no background.png' | asset_url }}" width="200" height="200" alt="P4K Logo">
+      </div>
+      <div class="header-txt">
+        <h1 id="pg-title">Play4Keeps Apparel</h1>
+      </div>
+      <div class="header-icons">
+        <a href="/account/login">Login</a>
+        <a href="/account/register">SignUp</a>
+        <a href="/search">
+          <img src="{{ '001-search.png' | asset_url }}" width="200px" height="200px" alt="search icon">
+        </a>
+        <a href="/cart">
+          <img src="{{ '002-shopping-bag.png' | asset_url }}" width="200px" height="200px" alt="shopping cart">
+        </a>
+      </div>
+    </header>
+
+    <div class="vid-pic-container">
+      <div class="vid-slider">
+        {% assign video_count = 3 %}
+        {% for i in (1..video_count %}
+          <video id="myVideo{{ i }}" muted autoplay>
+            <source src="{{ 'your-video-source-' | append: i | append: .mp4 | asset_url }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        {% endfor %}
+      </div>
+      <div class="pic-slider">
+        <button class="prev">&#9664;</button>
+        <div class="slides">
+          {% assign sweat_suit = collections['sweat-suits'].products %}
+          {% for product in sweat_suit %}
+            {% for variant in product.variants %}
+              <div class="variant">
+                <a href="{{ product.url }}">
+                  {% if variant.image %}
+                    <img
+                      src="{{ variant.image | image_url: height: '400x' }}"
+                      width="200"
+                      height="200"
+                      alt="{{ product.title }}"
+                    >
+                  {% else %}
+                    <img
+                      src="{{ product.featured_image | image_url: height: '400x' }}"
+                      width="200"
+                      height="200"
+                      alt="{{ product.title }}"
+                    >
+                  {% endif %}
+                </a>
+                <p>{{ variant.price | money_without_trailing_zeros }}</p>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+        <button class="next">&#9654;</button>
+      </div>
+    </div>
+
+    <div class="product-header">
+      <h2>Tops</h2>
+      <p>Clever line goes here</p>
+    </div>
+    <div class="product-container-tops">
+      <button class="arrow left-arrow-tops">&#9664;</button>
+      <div class="products">
+        {% assign tops = collections.shirts.products %}
+        {% for product in tops %}
+          <div class="product">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | image_url:  width: '269', height: '290'}}"
+                width="269"
+                height="290"
+                alt="{{ product.title }}"
+              >
+            </a>
+            <p>{{ product.title }}</p>
+            <p>{{ product.price | money_without_trailing_zeros }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="arrow right-arrow-tops">&#9654;</button>
+    </div>
+
+    <div class="product-header">
+      <h2>Bottoms</h2>
+      <p>Clever line goes here</p>
+    </div>
+    <div class="product-container-bottoms">
+      <button class="arrow left-arrow-bottoms">&#9664;</button>
+      <div class="products">
+        {% assign bottoms = collections.shorts.products %}
+        {% for product in bottoms %}
+          <div class="product">
+            <a href="{{ product.url }}">
+              <img
+                src="{{ product.featured_image | image_url:  width: '269', height: '290'}}"
+                width="269"
+                height="290"
+                alt="{{ product.title }}"
+              >
+            </a>
+            <p>{{ product.title }}</p>
+            <p>{{ product.price | money_without_trailing_zeros }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <button class="arrow right-arrow-bottoms">&#9654;</button>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-company">
+          <h3>Company</h3>
+          <a href="#">About Us</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="socials">
+          <h3>Hit Us Up</h3>
+          <span class="socials-group">
+            <img src="{{ '001-facebook-logo.png' | asset_url }}" width="128px" height="128px" alt="facebook">
+            Facebook
+          </span>
+          <span class="socials-group">
+            <img src="{{ '002-instagram.png' | asset_url }}" width="128px" height="128px" alt="insta">
+            Instagram
+          </span>
+          <span class="socials-group">
+            <img src="{{ '003-youtube-symbol.png' | asset_url }}" width="128px" height="128px" alt="youtube">
+            Youtube
+          </span>
+          <span class="socials-group">
+            <img src="{{ '004-tik-tok.png' | asset_url }}" width="128px" height="128px" alt="tiktok">
+            TikTok
+          </span>
+        </div>
+      </div>
+
+      <div class="payments-logo-row">
+        <div class="pay-icons">
+          <img src="{{ '008-amex.png' | asset_url }}" width="128px" height="128px" alt="amex">
+          <img src="{{ '009-apple-pay.png' | asset_url }}" width="128px" height="128px" alt="apple">
+          <img src="{{ '001-card.png' | asset_url }}" width="128px" height="128px" alt="discover">
+          <img src="{{ '003-meta.png' | asset_url }}" width="128px" height="128px" alt="meta">
+          <img src="{{ '004-google-pay.png' | asset_url }}" width="128px" height="128px" alt="google">
+          <img src="{{ '005-card-1.png' | asset_url }}" width="128px" height="128px" alt="mastercard">
+          <img src="{{ '007-visa-1.png' | asset_url }}" width="128px" height="128px" alt="visa">
+        </div>
+        <div class="footer-logo">
+          <img src="{{ 'p4k no background.png' | asset_url }}" width="200px" height="200px" alt="P4K logo">
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const initProductSlider = (containerSelector, leftArrowSelector, rightArrowSelector) => {
+    const productsContainer = document.querySelector(containerSelector);
+    const leftArrow = document.querySelector(leftArrowSelector);
+    const rightArrow = document.querySelector(rightArrowSelector);
+    let currentIndex = 0;
+    
+    const getVisibleProductsCount = () => {
+        const containerWidth = productsContainer.offsetWidth;
+        const productWidth = document.querySelector(`${containerSelector} .product`).offsetWidth + 20;
+        return Math.floor(containerWidth / productWidth);
+    };
+    
+    const moveProducts = (direction) => {
+        const visibleProducts = getVisibleProductsCount();
+        const maxIndex = Math.max(0, document.querySelectorAll(`${containerSelector} .product`).length - visibleProducts);
+    
+        if (direction === 'left' && currentIndex > 0) {
+            currentIndex--;
+        } else if (direction === 'right' && currentIndex < maxIndex) {
+            currentIndex++;
+        }
+    
+        productsContainer.style.transform = `translateX(-${currentIndex * (document.querySelector(`${containerSelector} .product`).offsetWidth + 20)}px)`;
+    
+        leftArrow.disabled = currentIndex === 0;
+        rightArrow.disabled = currentIndex === maxIndex;
+    };
+
+    const handleResize = () => {
+        const visibleProducts = getVisibleProductsCount();
+        const maxIndex = Math.max(0, document.querySelectorAll(`${containerSelector} .product`).length - visibleProducts);
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        productsContainer.style.transform = `translateX(-${currentIndex * (document.querySelector(`${containerSelector} .product`).offsetWidth + 20)}px)`;
+    };
+    
+    leftArrow.addEventListener('click', () => moveProducts('left'));
+    rightArrow.addEventListener('click', () => moveProducts('right'));
+
+    window.addEventListener('resize', handleResize);
+    
+    leftArrow.disabled = true;
+    rightArrow.disabled = false; 
+};
+
+const initImageSlider = () => {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.pic-slider .slides .variant');
+    const totalSlides = slides.length;
+    const slideContainer = document.querySelector('.pic-slider .slides');
+    let interval;
+
+    slides.forEach((slide, index) => {
+      slide.style.display = (index === slideIndex) ? 'block' : 'none';
+    });
+  
+    const changeSlides = (direction) => {
+
+      slides[slideIndex].style.display = 'none';
+
+      
+      slideIndex += direction;
+
+        if(slideIndex < 0) {
+            slideIndex = totalSlides - 1;
+        } else if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+
+      slides[slideIndex].style.display = 'block'; 
+    };
+
+    const prevButton = document.querySelector('.pic-slider .prev');
+    const nextButton = document.querySelector('.pic-slider .next');
+
+    prevButton.addEventListener('click', ()=> {
+        changeSlides(-1);  
+    });
+    nextButton.addEventListener('click', ()=> {
+        changeSlides(1);
+    });
+};
+
+const initVideoPlaylist = () => {
+    console.log('Initializing video playlist...');
+    const videoElement = document.getElementById('myVideo');
+    const videos = [
+        '/vids/blk_guy_mean_mug.mp4',
+        '/vids/blk_woman_dancing.mp4',
+        '/vids/blk_male_boxer.mp4',
+        '/vids/blk_woman_lipstick.mp4',
+        '/vids/sexy_girl_twerk.mp4'
+    ];
+
+    let currentVideoIndex = 0;
+
+    videoElement.addEventListener('ended', ()=> {
+        console.log(`Video ended, current video index: ${currentVideoIndex}`);
+        currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        console.log(`Next Video Index: ${currentVideoIndex}`);
+
+        videoElement.src = videos[currentVideoIndex];
+        videoElement.load();
+        videoElement.play().catch(error => {
+            console.error('Error playing the video:', error);
+        });
+    });
+
+    videoElement.src = videos[currentVideoIndex];
+    videoElement.load();
+    videoElement.play().catch(error => {
+        console.error('Error playing the first video:', error);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', ()=> {
+    initProductSlider('.product-container-tops .products', '.left-arrow-tops', '.right-arrow-tops');
+    initProductSlider('.product-container-bottoms .products', '.left-arrow-bottoms', '.right-arrow-bottoms');
+    initImageSlider();
+    initVideoPlaylist();
+});
+    </script>
+  </body>
+</html>
