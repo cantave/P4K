@@ -47,7 +47,8 @@ initProductSlider('.product-container-bottoms .products', '.left-arrow-bottoms',
 ````
 ## Next Steps
 - **Font Integration**: Finalize and test the custom font integration to ensure it displays correctly across all devices.
-- **Additional Features**: Consider adding animations to transitions within sliders to enhance user experience.
+- **Additional Features**: Considering adding animations to transitions within sliders to enhance user experience.
+- **Responsiveness**: Adding responsive layout features for mobile devices and tablets.
 - **Testing**: Conduct thorough testing across different devices and browsers to identify any layout or functionality issues.
 - **Documentation**: Create detailed documentation for future contributors and users.
 - **Deployment**: Publish the theme as the homepage for the Shopify Storefront.
