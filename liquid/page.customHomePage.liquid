@@ -13,13 +13,25 @@
     <title>Play4Keeps Apparel</title>
   </head>
   <body>
+    <!-- Scrolling Banner -->
+    <div class="scrolling-banner">
+      <p>
+        You Have Now Entered The Playaz Club...Monumental With Every Stitch
+      </p>
+    </div>
+    
     <header class="header">
+      <!-- Logo -->
       <div class="logo">
         <img src="{{ 'p4k no background.png' | asset_url }}" width="200" height="200" alt="P4K Logo">
       </div>
+
+      <!-- Header Text -->
       <div class="header-txt">
         <h1 id="pg-title">Play4Keeps Apparel</h1>
       </div>
+
+      <!-- Header Icons -->
       <div class="header-icons">
         <a href="/account/login">Login</a>
         <a href="/account/register">SignUp</a>
@@ -31,7 +43,8 @@
         </a>
       </div>
     </header>
-
+    
+    <!-- Vid and Product Slider -->
     <div class="vid-pic-container">
       <div class="vid-slider">
         {% assign video_files = "blk_guy_mean_mug.mp4,blk_woman_dancing.mp4,blk_male_boxer.mp4,blk_woman_lipstick.mp4,sexy_girl_twerk.mp4" | split: "," %}
@@ -40,6 +53,7 @@
             Your browser does not support HTML5 video.
           </video>
       </div>
+      
       <div class="pic-slider">
         <button class="prev">&#9664;</button>
         <div class="slides">
@@ -71,8 +85,13 @@
         </div>
         <button class="next">&#9654;</button>
       </div>
+
+      <div class="blinking-message" onclick="scrollToProducts()">
+        Shop Now!
+      </div>
     </div>
 
+    <!-- Tops Section -->
     <div class="product-header">
       <h2>Tops</h2>
       <p>Clever line goes here</p>
@@ -99,6 +118,7 @@
       <button class="arrow right-arrow-tops">&#9654;</button>
     </div>
 
+    <!-- Bottoms Sections -->
     <div class="product-header">
       <h2>Bottoms</h2>
       <p>Clever line goes here</p>
@@ -125,6 +145,7 @@
       <button class="arrow right-arrow-bottoms">&#9654;</button>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-company">
@@ -166,6 +187,9 @@
         <div class="footer-logo">
           <img src="{{ 'p4k white no background.png' | asset_url }}" width="200px" height="200px" alt="P4K logo">
         </div>
+        <a href="#top" class="up-arrow" id="scrollToTop">
+          <img src="{{ 'back-to-top.png' | asset_url }}"  width="128px" height="128px" alt="Up Arrow">
+        </a>
       </div>
     </footer>
 
@@ -285,6 +309,24 @@ const initVideoPlaylist = () => {
         console.error('Error playing the first video:', error);
     });
 };
+
+function scrollToProducts() {
+        const productsContainer = document.querySelector('.product-container-tops');
+        if(productsContainer) {
+          productsContainer.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+      
+document.getElementById('scrollToTop').addEventListener('click', function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 document.addEventListener('DOMContentLoaded', ()=> {
     initProductSlider('.product-container-tops .products', '.left-arrow-tops', '.right-arrow-tops');
