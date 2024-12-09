@@ -49,10 +49,10 @@ img {
 
 .header {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: white;
 }
 
 .logo {
@@ -324,12 +324,13 @@ h1 {
   padding: 20px;
   background-color: black;
   color: white;
+  border-radius: 4px;
 }
 
 .footer-top {
   display: flex;
-  justify-content: space-between;
-  width: 33%;
+  justify-content: space-evenly;
+  width: 100%;
   padding-bottom: 20px;
 }
 
@@ -355,10 +356,7 @@ h1 {
 }
 
 .footer .socials {
-  display: flex;
-  flex-direction: column;
   flex: 0.5;
-  justify-content: center;
 }
 
 .footer .socials img {
@@ -389,12 +387,11 @@ h1 {
 
 .pay-icons {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 10px;
   align-items: flex-start;
   height: 100%;
-  flex-grow: 1;
 }
 
 .pay-icons img {
@@ -429,4 +426,84 @@ h1 {
 .up-arrow:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .vid-pic-container {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .vid-slider {
+    width: 100%;
+    border-right: none;
+    padding-bottom: 50px;
+    border-bottom: 4px double #000;
+  }
+  .pic-slider {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .blinking-message {
+    position: absolute;
+    bottom: auto;
+    transform: translateX(-50%);
+    left: 50%;
+    top: calc(100% - 212px);
+    margin-bottom: 0px;
+  }
+
+  .product-container-tops {
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .product-container-bottoms {
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .products {
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s ease;
+  }
+
+  .product {
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .footer .socials {
+    box-sizing: none !important;
+  }
+
+  .payments-logo-row {
+    flex-direction: row;
+  }
+
+  .footer-logo {
+    width: 100%;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+
+  .footer-company a {
+    font-size: 12px;
+  }
+
+  .up-arrow {
+    align-self: flex-end;
+    margin-left: auto;
+  }
 }
